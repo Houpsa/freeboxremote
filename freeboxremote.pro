@@ -5,11 +5,13 @@ QT = core gui declarative
 
 HEADERS += \
     fileio.h \
-    style.h
+    style.h \
+    settingsmanager.h
 
 SOURCES += main.cpp \
     fileio.cpp \
-    style.cpp
+    style.cpp \
+    settingsmanager.cpp
 
 
 OTHER_FILES += \

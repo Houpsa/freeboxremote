@@ -84,12 +84,12 @@ Page {
         id: configMenu
         MenuLayout {
             MenuItem {
-                text: qsTr("Quit")
-                onClicked: Qt.quit();
+                text: qsTr("Configure Freebox key")
+                onClicked: pageStack.push(Qt.resolvedUrl("FreeboxKeyPage.qml"))
             }
             MenuItem {
-                text: qsTr("Configure Freebox key")
-                onClicked: pageStack.push(Qt.resolvedUrl("AjoutCle.qml"))
+                text: qsTr("Quit")
+                onClicked: Qt.quit();
             }
         }
     }
