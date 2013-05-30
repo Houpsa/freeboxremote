@@ -47,7 +47,8 @@ Style::Style(QObject *parent) :
     m_platform = Unknown;
 #endif
     // Debug
-    m_platform = Freemantle;
+//    m_platform = Freemantle;
+    m_platform = Harmattan;
 }
 
 Style::Platform Style::platform() const

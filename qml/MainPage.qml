@@ -1,6 +1,5 @@
 import QtQuick 1.0
 import com.nokia.meego 1.0
-//import FileIO 1.0
 
 Page {
     tools: ToolBarLayout {
@@ -39,9 +38,15 @@ Page {
             width: 3 * STYLE.buttonSize
             height: 3 * STYLE.buttonSize
             anchors.bottom: parent.bottom; anchors.right: parent.right
-            RemoteButton {
-                anchors.top: parent.top; anchors.left: parent.left
-                text: "0"
+            Row {
+                Item {
+                    visible: window.inPortrait
+                    width: STYLE.buttonSize
+                    height: STYLE.buttonSize
+                }
+                RemoteButton {
+                    text: "0"
+                }
             }
 
             Row {
@@ -53,6 +58,14 @@ Page {
                     }
                     RemoteButton {
                         text: "Vol -"
+                    }
+                }
+                Column {
+                    RemoteButton {
+                        text: "Menu"
+                    }
+                    RemoteButton {
+                        text: "Mute"
                     }
                 }
                 Column {
