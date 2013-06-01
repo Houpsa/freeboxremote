@@ -55,3 +55,5 @@ void SettingsManager::saveKey(const QString &key)
         emit keyChanged();
     }
 }
+
+

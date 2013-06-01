@@ -1,5 +1,6 @@
 import QtQuick 1.0
 import com.nokia.meego 1.0
+import QtWebKit 1.0
 
 Page {
     tools: ToolBarLayout {
@@ -12,12 +13,20 @@ Page {
         }
         ToolIcon {
             iconSource: "../data/icon-m-toolbar-next.png"
-            onClicked: {
-
+            onClicked: {  }
+        }
+        WebView{
+            id: vueWeb
+            objectName: "vueWeb"
+            visible:false
+            height: 2
+            width: 2
+            url: ""
+            onLoadFailed: {
+                pageStack.push(Qt.resolvedUrl("Erreur.qml"))
             }
         }
     }
-
     Item {
         anchors.centerIn: parent
         width: window.inPortrait ? 3 * STYLE.buttonSize : 6 * STYLE.buttonSize
@@ -30,6 +39,7 @@ Page {
                 model: 9
                 RemoteButton {
                     text: (model.index + 1)
+                    objectName: index+1
                 }
             }
         }
@@ -46,6 +56,7 @@ Page {
                 }
                 RemoteButton {
                     text: "0"
+                    objectName: "0"
                 }
             }
 
@@ -55,25 +66,31 @@ Page {
                 Column {
                     RemoteButton {
                         text: "Vol +"
+                        objectName: "vol_in"
                     }
                     RemoteButton {
                         text: "Vol -"
+                        objectName: "vol_dec"
                     }
                 }
                 Column {
                     RemoteButton {
                         text: "Menu"
+                        objectName: "home"
                     }
                     RemoteButton {
                         text: "Mute"
+                        objectName: "mute"
                     }
                 }
                 Column {
                     RemoteButton {
                         text: "Prgm +"
+                        objectName: "prgm_inc"
                     }
                     RemoteButton {
                         text: "Prgm -"
+                        objectName: "prgm_dec"
                     }
                 }
             }
