@@ -24,5 +24,6 @@ Rectangle {
         // Il faut définir la propriété objetcName des boutons (RemoteButton.qml)
         // key = rect.objectName pour que cela corresponde à la touche à cliquer sur la télécommande
         onClicked: vueWeb.url = "http://hd1.freebox.fr/pub/remote_control?key="+rect.objectName+"&code="+SETTINGS_MANAGER.key
+        onPressAndHold: vueWeb.url = "http://hd1.freebox.fr/pub/remote_control?key="+rect.objectName+"&code="+SETTINGS_MANAGER.key+"&long=true"
     }
 }
